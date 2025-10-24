@@ -65,20 +65,32 @@ body {
     border-top-right-radius: 15px;
 }
 
+/* FIXED HEART BUTTON - More responsive and visible */
 .heart-button {
     position: absolute;
     bottom: clamp(20px, 5vw, 40px);
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(60px, 12vw, 100px);
-    height: clamp(55px, 11vw, 90px);
+    width: clamp(70px, 15vw, 120px);
+    height: clamp(65px, 14vw, 110px);
     background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
-    clip-path: path('M50,25 C62.5,0 87.5,12.5 87.5,37.5 C87.5,62.5 50,87.5 50,87.5 C50,87.5 12.5,62.5 12.5,37.5 C12.5,12.5 37.5,0 50,25 Z');
     cursor: pointer;
     z-index: 3;
     transition: all 0.4s ease;
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
     animation: heartbeat 2s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Using pseudo-element for better heart shape control */
+.heart-button::before {
+    content: '❤️';
+    font-size: clamp(30px, 7vw, 50px);
+    display: block;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .heart-button:hover {
@@ -405,6 +417,17 @@ body {
     .popup-heart {
         font-size: 2.5rem;
     }
+    
+    /* Enhanced heart button for mobile */
+    .heart-button {
+        width: clamp(80px, 18vw, 130px);
+        height: clamp(75px, 17vw, 120px);
+        bottom: clamp(15px, 4vw, 30px);
+    }
+    
+    .heart-button::before {
+        font-size: clamp(35px, 8vw, 55px);
+    }
 }
 
 @media (max-width: 480px) {
@@ -442,6 +465,17 @@ body {
     .popup-content h3 {
         font-size: 1.3rem;
     }
+    
+    /* Extra small heart button */
+    .heart-button {
+        width: clamp(85px, 20vw, 140px);
+        height: clamp(80px, 19vw, 130px);
+        bottom: clamp(10px, 3vw, 25px);
+    }
+    
+    .heart-button::before {
+        font-size: clamp(40px, 9vw, 60px);
+    }
 }
 
 /* Extra small devices */
@@ -459,6 +493,17 @@ body {
         font-size: 0.7rem;
         padding: 3px 8px;
     }
+    
+    /* Smallest screen heart button */
+    .heart-button {
+        width: 90px;
+        height: 85px;
+        bottom: 15px;
+    }
+    
+    .heart-button::before {
+        font-size: 45px;
+    }
 }
 
 /* Large screens */
@@ -475,5 +520,27 @@ body {
     .heart-letter-container {
         width: 600px;
         height: 500px;
+    }
+    
+    /* Large screen heart button */
+    .heart-button {
+        width: 130px;
+        height: 120px;
+        bottom: 45px;
+    }
+    
+    .heart-button::before {
+        font-size: 60px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .heart-button:hover {
+        transform: translateX(-50%) scale(1);
+    }
+    
+    .heart-button:active {
+        transform: translateX(-50%) scale(1.1);
     }
 }
