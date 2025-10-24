@@ -18,6 +18,13 @@ function openEnvelope() {
     const envelope = document.getElementById('envelope');
     const heartLetterContainer = document.getElementById('heartLetterContainer');
     
+    // Add a small click effect to the heart button
+    const heartButton = document.querySelector('.heart-button');
+    heartButton.style.transform = 'translateX(-50%) scale(0.9)';
+    setTimeout(() => {
+        heartButton.style.transform = 'translateX(-50%) scale(1)';
+    }, 150);
+    
     envelope.classList.add('open');
     
     // Add slight delay for better animation sequence
@@ -135,6 +142,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add resize listener
     window.addEventListener('resize', handleResize);
+    
+    // Add touch event for mobile devices
+    const heartButton = document.querySelector('.heart-button');
+    heartButton.addEventListener('touchstart', function() {
+        this.style.transform = 'translateX(-50%) scale(0.9)';
+    });
+    
+    heartButton.addEventListener('touchend', function() {
+        this.style.transform = 'translateX(-50%) scale(1)';
+    });
 });
 
 // Prevent zoom on double-tap for mobile
