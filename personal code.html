@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Letter Envelope</title>
+    <link rel="stylesheet" href="personalcode.css">
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <h1 class="title">A Special Heartfelt Message</h1>
+        
+        <div class="envelope" id="envelope">
+            <div class="flap"></div>
+            <div class="heart-button" onclick="openEnvelope()"></div>
+
+            <div class="heart-letter-container" id="heartLetterContainer">
+                <div class="heart-letter" id="heartLetter" onclick="flipLetter()">
+                    <div class="heart-letter-front">
+                        <div class="page-indicator">Page 1/2</div>
+                        <div class="letter-content">
+                            <h2>To My Love</h2>
+                            <p>I hope this message finds you surrounded by happiness and light.</p>
+                            <p>Your presence in my life has been a beautiful gift that I cherish every day.</p>
+                            <p>Though we are so far away, when we chat I feel like you are with me.</p>
+                            <p>I never knew I would meet someone so sweet as you and you are so precious to me.</p>
+                            <p>I love you a lot and want to live with you Forever</p>
+                        </div>
+                        <div class="flip-instruction">Click to read more →</div>
+                    </div>
+                    <div class="heart-letter-back">
+                        <div class="page-indicator">Page 2/2</div>
+                        <div class="letter-content">
+                            <h2>Continued...</h2>
+                            <p>I will make you really happy.</p>
+                            <p>Insha Allah, our love will continue to grow and flourish.</p>
+                            <p>and I pray that we will end up together.</p>
+                            <p class="signature">With all my love,<br>Your One and Only "call me yours" 😊</p>
+                        </div>
+                        <button class="close-btn" onclick="closeLetter(event)">Close Letter</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <div class="popup-heart">💖</div>
+            <h3>I LOVE YOU A LOT!</h3>
+            <p>Hope you like my small letter 😊, I want to say more that you are soo beautiful, sweet and the best person in my life. I LOVE YOU!</p>
+            <button class="popup-close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="personal code.js"></script>
+</body>
+</html>
